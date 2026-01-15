@@ -1,5 +1,5 @@
 # Smart-Garage
-Make a normal garage door opener smart, using an ESP32 and a Relay. (Make sure to use a 3.3v Relay with an ESP32).
+Make a normal garage door opener smart, using an ESP32, Relay and Reed Switch. (Make sure to use a 3.3v Relay with an ESP32).
 
 ### This config is for Homeassistant currently, but you could probably use arduino code or similar as well to control this.
 
@@ -29,5 +29,14 @@ Make a normal garage door opener smart, using an ESP32 and a Relay. (Make sure t
 ### Step 3
 - Connect the other side of the relay (The NO and COM side) to your Garage door opener
 - OPTION 1: If you have an older garage door opener, that has a "push button switch" that simply completes the circuit (A normal switch), then you can wire this directly into your door opener where the push button switch wires connect. (Same 2 contacts)
-- OPTION 2: If you have a newer garage door opener, that has a "push button switch" that sends a signal, not just completes a circuit, then you can wire this esp to an old garage remote. 99% of these have normal push button switches. You will need to pair this remote with your garage, make sure it works, and then wire the other end of the relay to this switch instead. Make sure to take the battery out when wiring, so the garage door doesn't keep opening.
-- Make sure to connect the NO and COM port from the Relay to whichever opion you are choosign above. The orientation of those doesn't matter, it should work both ways.
+- OPTION 2: If you have a newer garage door opener, that has a "push button switch" that sends a signal, not just completes a circuit, then you can wire this esp to an old garage remote. 99% of these have normal push button switches. You will need to pair this remote with your garage, make sure it works, and then wire the other end of the relay to this switch instead. Make sure to take the battery out when wiring, so the garage door doesn't keep opening
+- Make sure to connect the NO and COM port from the Relay to whichever opion you are choosign above. The orientation of those doesn't matter, it should work both ways
+
+### Step 4
+- If you want extra funtionality, like seeing the current state of the garage door as well, you will need to mount a reed switch of some sort. This isn't nessacary for the project to work, but its pretty useful
+- Wire the Reed switch to pin D14 and GND on the ESP32 (you can change this as well, just make sure to update the code)
+- Attach the second end of the reed switch (the one without wires - the magnetic part) on the actual door that moves.
+- The hardest part will be running wires for this reed switch. You have two options:
+  - OPTION 1: Have the reed switch connect when the door closes. You will have to run wires to the bottom on the garage door to have this work. You can also use wires that are already running there. There are usually 2 extra wires running from the opener to where the trip sensor is, which is the perfect place to put the reed switch.
+  - OPTION 2: Have the reed switch connect when the door opens. You can place the reed switch much closes to the top of the door opener, having to run less wire. (NOTE: you will have to flip the logic in the code if you go about this route)
+- Place the somehwere close to the garage door opener (usually above it), and power it on, everything should work.
