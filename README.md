@@ -28,8 +28,8 @@ Make a normal garage door opener smart, using an ESP32, Relay and Reed Switch. (
 
 ### Step 3
 - Connect the other side of the relay (The NO and COM side) to your Garage door opener
-- OPTION 1: If you have an older garage door opener, that has a "push button switch" that simply completes the circuit (A normal switch), then you can wire this directly into your door opener where the push button switch wires connect. (Same 2 contacts)
-- OPTION 2: If you have a newer garage door opener, that has a "push button switch" that sends a signal, not just completes a circuit, then you can wire this esp to an old garage remote. 99% of these have normal push button switches. You will need to pair this remote with your garage, make sure it works, and then wire the other end of the relay to this switch instead. Make sure to take the battery out when wiring, so the garage door doesn't keep opening
+  - OPTION 1: If you have an older garage door opener, that has a "push button switch" that simply completes the circuit (A normal switch), then you can wire this directly into your door opener where the push button switch wires connect. (Same 2 contacts)
+  - OPTION 2: If you have a newer garage door opener, that has a "push button switch" that sends a signal, not just completes a circuit, then you can wire this esp to an old garage remote. 99% of these have normal push button switches. You will need to pair this remote with your garage, make sure it works, and then wire the other end of the relay to this switch instead. Make sure to take the battery out when wiring, so the garage door doesn't keep opening
 - Make sure to connect the NO and COM port from the Relay to whichever opion you are choosign above. The orientation of those doesn't matter, it should work both ways
 
 ### Step 4
